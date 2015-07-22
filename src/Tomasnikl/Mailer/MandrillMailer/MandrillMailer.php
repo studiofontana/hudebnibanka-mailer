@@ -5,14 +5,14 @@
  * Author: Tomas Nikl <tomasnikl.cz@gmail.com>
  */
 
-namespace tomasnikl\Mailer\MandrillMailer;
+namespace Tomasnikl\Mailer\MandrillMailer;
 
 
 use Nette\DI\Container;
 use Nette\Object;
 use Nette\Utils\Strings;
-use tomasnikl\Mailer\IMailer;
-use tomasnikl\Mailer\Mailer;
+use Tomasnikl\Mailer\IMailer;
+use Tomasnikl\Mailer\Mailer;
 use Latte\Engine;
 use Latte\Macros\BlockMacros;
 use Latte\Macros\CoreMacros;

@@ -5,14 +5,14 @@
  * Author: Tomas Nikl <tomasnikl.cz@gmail.com>
  */
 
-namespace tomasnikl\Mailer\NetteMailer;
+namespace Tomasnikl\Mailer\NetteMailer;
 
 
 use Nette\DI\Container;
 use Nette\Mail\Message;
 use Nette\Mail\SendmailMailer;
 use Nette\Object;
-use tomasnikl\Mailer\IMailer;
+use Tomasnikl\Mailer\IMailer;
 use Latte\Engine;
 use Latte\Macros\BlockMacros;
 use Latte\Macros\CoreMacros;

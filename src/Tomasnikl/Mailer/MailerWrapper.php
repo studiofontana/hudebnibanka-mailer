@@ -5,12 +5,12 @@
  * Author: Tomas Nikl <tomasnikl.cz@gmail.com>
  */
 
-namespace tomasnikl\Mailer;
+namespace Tomasnikl\Mailer;
 
 
 use Nette\DI\Container;
 use Nette\Object;
-use tomasnikl\Mailer\IMailer;
+use Tomasnikl\Mailer\IMailer;
 
 class MailerWrapper {
 

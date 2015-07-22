@@ -1,5 +1,6 @@
 {
     "name": "tomasnikl/mailer",
+	"type": "library",
     "description": "Nette mandrill mailer wrapper",
     "keywords": [],
     "license": "Apache Version 2",
@@ -12,9 +13,8 @@
     "require": {
         "nette/nette": ">=2.3.0"
     },
+	"minimum-stability": "dev",
     "autoload": {
-	    "psr-0": {
-		    "Mailer": "src/"
-	    }
+	    "classmap": ["src/"]
     }
 }

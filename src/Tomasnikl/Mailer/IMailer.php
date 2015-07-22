@@ -5,7 +5,7 @@
  * Author: Tomas Nikl <tomasnikl.cz@gmail.com>
  */
 
-namespace tomasnikl\Mailer;
+namespace Tomasnikl\Mailer;
 
 
 interface IMailer {
