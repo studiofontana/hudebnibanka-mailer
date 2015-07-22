@@ -1,18 +1,11 @@
 {
     "name": "tomasnikl/mailer",
     "description": "Nette mandrill mailer wrapper",
-    "keywords": [],
-    "license": "Apache Version 2",
     "authors": [
         {
             "name": "Tomas Nikl",
-            "homepage": "http://tomasnikl.eu"
+            "email": "tomasnikl.cz@gmail.com"
         }
     ],
-    "require": {
-        "nette/nette": ">=2.3.0"
-    },
-    "autoload": {
-        "classmap": ["src/"]
-    }
+    "require": {}
 }
