@@ -34,6 +34,8 @@ class MandrillMailer extends Object implements IMailer {
 
 	public $to = [];
 
+	public $attachments = [];
+
 	/**
 	 * @var Container
 	 */
@@ -50,6 +52,11 @@ class MandrillMailer extends Object implements IMailer {
 		return $this;
 //		$this->params['part'] = $template;
 //		return $this;
+	}
+
+	public function setAttachment($attachment)
+	{
+		$this->attachments[] = $attachment;
 	}
 
 	public function setSubject($subject)
@@ -128,6 +135,10 @@ class MandrillMailer extends Object implements IMailer {
 			'to' => $this->to,
 			'global_merge_vars' => $this->params,
 		];
+
+		if(count($this->attachments)) {
+			$message['attachments'] = $this->attachments;
+		}
 
 		$mandrill = new \Mandrill($this->container->parameters['mandrill']['apikey']);
 		$result = $mandrill->messages->sendTemplate($this->template, [[]], $message, true);
