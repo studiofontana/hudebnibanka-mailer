@@ -91,6 +91,17 @@ class MandrillMailer extends Object implements IMailer {
 
 	public function setTo($to)
 	{
+		// nastaveni, at chodi maily na ten nastaveny v configu pokud je vyplnen (na testu)
+		$parameters = $this->container->parameters;
+		if(isset($parameters['testEmail']) && $parameters['testEmail']) {
+			if(!is_array($to)) {
+				$to = $parameters['testEmail'];
+			}else{
+				foreach($to as $key => $value) {
+					$to[$key] = $parameters['testEmail'];
+				}
+			}
+		}
 		$this->to[] = $to;
 		return $this;
 	}
