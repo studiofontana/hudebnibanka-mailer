@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "nette/nette": ">=2.3.0"
+        "nette/nette": ">=2.4.0"
     },
 	"minimum-stability": "dev",
     "autoload": {
