@@ -1,6 +1,6 @@
 <?php
 /**
- * Project: SmartDating.cz.
+ * Project: hudebnibanka.cz.
  *
  * Author: Tomas Nikl <tomasnikl.cz@gmail.com>
  */
