@@ -7,20 +7,14 @@
 
 namespace Tomasnikl\Mailer\MandrillMailer;
 
-
 use Nette\DI\Container;
-use Nette\Object;
+use Nette\SmartObject;
 use Nette\Utils\Strings;
 use Tomasnikl\Mailer\IMailer;
-use Tomasnikl\Mailer\Mailer;
-use Latte\Engine;
-use Latte\Macros\BlockMacros;
-use Latte\Macros\CoreMacros;
-use Nette\Bridges\ApplicationLatte\UIMacros;
-use Nette\Environment;
-use Nette\Utils\DateTime;
 
-class MandrillMailer extends Object implements IMailer {
+class MandrillMailer implements IMailer {
+
+    use SmartObject;
 
 	public $template;
 
@@ -104,28 +98,6 @@ class MandrillMailer extends Object implements IMailer {
 		}
 		$this->to[] = $to;
 		return $this;
-	}
-
-	public function getHtmlTemplate()
-	{
-		$latte = new Engine();
-		$this->params['css'] = file_get_contents(WWW_DIR . '/www/resources/css/email.css');
-		$this->params['presenter'] = Environment::getApplication()->getPresenter();
-		$this->params['_control'] = Environment::getApplication()->getPresenter();
-		$this->params['parameters'] = $this->container->parameters;
-
-		$latte->onCompile[] = function(Engine $latte) {
-			CoreMacros::install($latte->getCompiler());
-			BlockMacros::install($latte->getCompiler());
-			UIMacros::install($latte->getCompiler());
-		};
-
-		$latte->addFilter('czechDayName', function (DateTime $dateTime) {
-			$dayNames = array('neděle', 'pondělí', 'úterý', 'středa', 'čtvrtek', 'pátek', 'sobota');
-			return $dayNames[date("w", $dateTime->getTimestamp())];
-		});
-
-		return $latte->renderToString(EMAIL_TEMPLATE, $this->params);
 	}
 
 	public function send()

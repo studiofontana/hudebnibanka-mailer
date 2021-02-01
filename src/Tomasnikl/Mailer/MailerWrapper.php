@@ -7,10 +7,7 @@
 
 namespace Tomasnikl\Mailer;
 
-
 use Nette\DI\Container;
-use Nette\Object;
-use Tomasnikl\Mailer\IMailer;
 
 class MailerWrapper {
 
