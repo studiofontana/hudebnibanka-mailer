@@ -136,13 +136,7 @@ class MandrillMailer extends Object implements IMailer {
 			'from_email' => $this->fromEmail,
 			'from_name' => $this->fromName,
 			'inline_css' => true,
-			'images' => [
-				[
-					'type' => 'image/png',
-					'name' => 'LOGO',
-					'content' => base64_encode(file_get_contents(WWW_DIR . '/www/resources/images/logo-email.png'))
-				]
-			],
+			'images' => [],
 			'to' => $this->to,
 			'global_merge_vars' => $this->params,
 		];
